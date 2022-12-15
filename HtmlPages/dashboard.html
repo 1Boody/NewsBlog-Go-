@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NewsBlog</title>
+</head>
+
+<body>
+    <h1>Hello, {{.CurrentUser.Name}}</h1>
+    <p>Your email address is: {{.CurrentUser.Email}}</p>
+    <a href="/blogs">See Today's Blogs</a><br>
+    <a href="/blogs/publish">Publish your own blogs!</a>
+    <br />
+    <h2>Daily News Feed</h2>
+    {{range .Articles}}
+    <h4><a href={{.Url}}>{{.Title}}</a></h4>
+    <p>By {{.Author}}. Published at {{.PublishedAt}}</p>
+    {{end}}
+</body>
+
+</html>
